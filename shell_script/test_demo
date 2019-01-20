@@ -1,0 +1,50 @@
+#!/bin/sh
+
+if [ -f /bin/bash ]
+then
+	echo "file /bin/bash exists"
+fi
+
+if [ -d /bin/bash ]
+then
+	echo "/bin/bash is a directory"
+else
+	echo "bin/bash is NOT a directory"
+fi
+
+if [ $1 -eq $2 ]
+then
+	echo "$1 equal $2"
+else
+	echo "$1 NOT equal $2"
+fi
+
+echo "It's morning? answer yes or not:"
+read timeofday
+
+if [ "$timeofday" = "yes" ]
+then
+	echo "Good morning!"
+elif [ "$timeofday" = "no" ]
+then
+	echo "Good afternoon"
+else 
+	echo "Sorry $timeofday not recognised. Please enter yse or no"
+	exit 1
+fi
+
+echo "There are $# args of this exec"
+for word in $@
+do
+	echo $word
+done
+
+echo -e "\nfiles in the current directory"
+for file in *
+do
+	echo $file
+	lpr $file
+done
+
+exit 0
+

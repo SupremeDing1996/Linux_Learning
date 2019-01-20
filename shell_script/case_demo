@@ -1,0 +1,16 @@
+#!/bin/sh
+
+echo "Is it morning? Please answer yes or no"
+
+read timeofday
+
+case "$timeofday" in
+	[yY] | [yY][eE][sS] )	echo "Good Morning!";;
+	[nN]|[nN][oO] )	echo "Good Afternoon";;
+	* )		echo "Sorry, answer not recognised"
+			exit 1;;
+esac
+
+exit 0
+
+

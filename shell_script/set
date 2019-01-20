@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo the date is $(date)
+set $(date)
+echo the mouth is $2
+
+for arg in $(date)
+do
+	echo $arg
+done
+
+exit 0
+
